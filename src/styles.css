@@ -1,1 +1,160 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  background-color: #e8e8e8
+}
+
+.top-margin {
+  margin-top: 50px;
+}
+
+.btn-addtask {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.panel-body {
+  background-color: #ecf0f2
+}
+
+.jumbotron {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background-color: #ffffff;
+  border-radius: 0px !important;
+}
+
+#copyright {
+  text-align: center;
+}
+
+#intermediate {
+  border-left: 3px solid #FAF54C;
+  background-color: #FDFCCF
+}
+
+#low {
+  border-left: 3px solid #6EBC32;
+  background-color: #F0FDE7;
+}
+
+#high {
+  border-left: 3px solid #EE3636;
+  background-color: #FFF5F5;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+#high,
+#low,
+#intermediate{
+  padding-left: 10px;
+  font-size: small;
+  margin-top: 13px;
+}
+
+.btn-margin-left {
+  margin-left: 5px;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+
+/* Custom Button Designs*/
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+#error-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+/*...... media quires.......*/
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  .btn-margin-left {
+    margin-left: 0px;
+  }
+
+  .checkbox-xs {
+    padding-left: 15px;
+  }
+
+  .col-xs-padding {
+    padding-top: 5px;
+  }
+
+  @media only screen
+  and (max-width: 767px)
+  and (orientation: portrait){
+    .btn-edit-xs {
+      margin-left: -10px;
+    }
+
+    .btn-del-xs {
+      margin-left: 25px;
+      margin-top: -50px;
+    }
+  }
+
+  @media only screen
+    and (max-width: 767px)
+    and (orientation: landscape){
+      .btn-edit-xs {
+        margin-left: 10px;
+      }
+
+      .btn-del-xs {
+        margin-left: 5px;
+      }
+  }
+}
+
