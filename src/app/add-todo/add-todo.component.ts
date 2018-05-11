@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TodoService } from './todo.service';
 import { Todo } from './todo.model';
@@ -10,13 +10,15 @@ import * as _ from 'lodash';
   styleUrls: ['./add-todo.component.css']
 })
 export class AddTodoComponent implements OnInit {
+  @ViewChild('closeBtn') closeBtn: ElementRef;
+
   todos: Todo[];
   demo: any[] = [];
   isEdit = false;
-  success = false;
+  isSuccess = false;
   isError = false;
   message = '';
-  data: any = { 'id' : '', 'task': '', 'priority': '', 'completed': '', 'date': ''} ;
+  data: any = { 'id' : '', 'task': '', 'priority': '', 'completed': '', 'date': ''};
 
   // Calculating date
   now = new Date();
@@ -55,12 +57,15 @@ export class AddTodoComponent implements OnInit {
         this.errorhandler(error);
       });
     }
+    // close your modal
+    this.closeModal();
   }
 
   showTodos() {
     this.todoService.getTodos()
       .subscribe((todos: Todo[]) => {
         this.todos = todos;
+        this.demo = [];
         for (let i = 0; i < todos.length; i++) {
           console.log(todos[i]['date']);
           this.demo.push(todos[i]['date']);
@@ -122,13 +127,18 @@ export class AddTodoComponent implements OnInit {
 
   suceesshandler(result, f) {
     if (result) {
-      this.success = true;
+      this.isSuccess = true;
       this.message = result.message;
       this.showTodos();
       f.resetForm();
       setTimeout(() => {
-        this.success = false;
+        this.isSuccess = false;
       }, 5000);
     }
+  }
+
+  // call this wherever you want to close modal
+  private closeModal(): void {
+    this.closeBtn.nativeElement.click();
   }
 }

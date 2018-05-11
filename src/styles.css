@@ -14,6 +14,11 @@ body {
   margin-bottom: 10px;
 }
 
+.btn-group {
+  padding-top:10px;
+  padding-bottom: 10px;
+}
+
 .panel-body {
   background-color: #ecf0f2
 }
@@ -56,14 +61,22 @@ body {
   margin-top: 13px;
 }
 
-.btn-margin-left {
-  margin-left: 5px;
-}
-
 .clearfix {
   overflow: auto;
 }
 
+.btn-space {
+  margin-right: 10px;
+}
+
+#message-container {
+  width:100%;
+  position: fixed;
+  top: 4%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
 
 /* Custom Button Designs*/
 
@@ -91,70 +104,5 @@ body {
   font-size: 24px;
   line-height: 1.33;
   border-radius: 35px;
-}
-
-#error-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
-}
-
-/*...... media quires.......*/
-
-/********** Large devices only **********/
-@media (min-width: 1200px) {
-
-}
-
-/********** Medium devices only **********/
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-/********** Small devices only **********/
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
-
-/********** Extra small devices only **********/
-@media (max-width: 767px) {
-  .btn-margin-left {
-    margin-left: 0px;
-  }
-
-  .checkbox-xs {
-    padding-left: 15px;
-  }
-
-  .col-xs-padding {
-    padding-top: 5px;
-  }
-
-  @media only screen
-  and (max-width: 767px)
-  and (orientation: portrait){
-    .btn-edit-xs {
-      margin-left: -10px;
-    }
-
-    .btn-del-xs {
-      margin-left: 25px;
-      margin-top: -50px;
-    }
-  }
-
-  @media only screen
-    and (max-width: 767px)
-    and (orientation: landscape){
-      .btn-edit-xs {
-        margin-left: 10px;
-      }
-
-      .btn-del-xs {
-        margin-left: 5px;
-      }
-  }
 }
 

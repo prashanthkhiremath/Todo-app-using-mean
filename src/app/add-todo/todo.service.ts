@@ -46,7 +46,7 @@ export class TodoService {
   }
 
   removeTodo (id): Observable<Todo> {
-    return this.http.delete<Todo>(`http://localhost:3000/api/todos/${id}123`)
+    return this.http.delete<Todo>(`http://localhost:3000/api/todos/${id}`)
       .pipe(
         catchError(this.handleError)
       );
